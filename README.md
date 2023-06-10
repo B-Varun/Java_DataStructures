@@ -1,2 +1,2 @@
 # Java_DataStructures
-Basic Implementation of different Data Structures in Java 
+Basic Implementation of some Data Structures in Java 
