@@ -28,6 +28,19 @@ while(temp != null){
 System.out.println();
 }
 
+public void reverse(){
+Object prev=null, curr=head, next=((Node)head).next;
+while(((Node)curr).next != null){
+ ((Node)curr).next = prev;
+ prev = curr;
+ curr = next; 
+ next = ((Node)next).next;
+}
+((Node)curr).next = prev;
+head = curr;
+printList();
+}
+
 public static void main(String... args){
 MySingleLinkedList list = new MySingleLinkedList();
 list.addNewNode(1);
@@ -41,5 +54,9 @@ list.addNewNode(8);
 list.addNewNode(9);
 list.addNewNode(10);
 list.printList();
+
+
+System.out.print("\nAfter reversing");
+list.reverse();
 }
 }
