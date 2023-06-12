@@ -3,7 +3,7 @@ package com.java.learn.data.structures;
 public class MySingleLinkedList{
 
 // Head pointer to the linked list
-public Object head = null;
+public static Object head = null;
 
 public void addNewNode(int data){
 if(head == null)
@@ -56,7 +56,36 @@ list.addNewNode(10);
 list.printList();
 
 
-System.out.print("\nAfter reversing");
-list.reverse();
+System.out.print("\nAfter reversing :");
+//list.reverse();
+Object h = head;
+//list.recrusiveReverseList(h);
+list.recReverse(null, h);
+list.printList();
 }
+
+// Prints list elements in reverse order. No elements are interchanged.
+public void recrusiveReverseList(Object head){
+if(head == null)
+return;
+else {
+recrusiveReverseList(((Node)head).next);
+System.out.print(((Node)head).data+"\t");
+}
+}
+
+// Reverses the list elements in reverse order
+public void recReverse(Object prev, Object curr){
+if(((Node)curr).next == null) 
+{
+  ((Node)curr).next = prev;
+  head = curr;
+}
+else{
+ recReverse(curr, ((Node)curr).next);
+ ((Node)curr).next = prev; 
+}
+}
+
+
 }
