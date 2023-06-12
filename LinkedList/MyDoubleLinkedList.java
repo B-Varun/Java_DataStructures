@@ -35,6 +35,19 @@ public void print(){
  }
 }
 
+public void reverse(){
+Object prev = null, curr = head, temp = null;
+
+while(curr != null){
+ temp = curr;
+ ((Node_DLL)temp).prev = ((Node_DLL)temp).next;
+ ((Node_DLL)temp).next = prev;
+ prev = temp;
+ curr = ((Node_DLL)temp).prev;
+}
+head = temp;
+}
+
 public static void main(String... arg){
 out.println("***Double Linked List***");
 MyDoubleLinkedList list = new MyDoubleLinkedList();
@@ -43,6 +56,9 @@ list.addElement(2);
 list.addElement(3);
 list.addElement(4);
 list.addElement(5);
+list.print();
+System.out.print("\nList Reversal");
+list.reverse();
 list.print();
 }
 }
