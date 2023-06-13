@@ -5,21 +5,15 @@ private int[] data = new int[10];
 private int top = -1;
 
 public boolean isEmpty(){
- if(top < 0)
-  return true;
- return false;
+ return (top<0) ? true : false;
 }
 
 public boolean isFull(){
- if(top == 9)
-  return true;
- return false;
+return (top==9) ? true : false;
 }
 
 public int peek(){
- if(isEmpty())
-     return -1;
- return data[top];
+return isEmpty() ? -1 : data[top];
 }
 
 public void push(int ele){
