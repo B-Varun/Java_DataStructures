@@ -16,8 +16,8 @@ for(int i=0; i<s.length(); i++)
 
 String reversedStr="";
 
-for(int i=s.length()-1; i>=0; i--)
- reversedStr+=s.charAt(i)+"";
+for(int i=0; i<s.length(); i++)
+ reversedStr+=stack.pop();
 
 
 return reversedStr;
