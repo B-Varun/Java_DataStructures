@@ -45,4 +45,15 @@ if(top == null)
  return -1;
 return top.data;
 }
+
+public void print(){
+Node temp = top;
+System.out.print("Elements of the Linked List are : ");
+while(temp!=null){
+ System.out.print(temp.data+"\t");
+ temp = temp.next;
+}
+System.out.println("\n\n");
+}
+
 }
