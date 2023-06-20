@@ -2,7 +2,7 @@ package com.java.learn.ds.stack.examples;
 
 public class BalancedParenthesis_Stack_Arr{
 public static void main(String... ar){
-String str = "[a+{b-(c/d)+e*f}/g]";
+String str = "[a+{b-(c/d)+e*f}/g]{";
 System.out.println(str);
 System.out.println("The above string is Balanced : "+checkIfBalanced(str));
 }
@@ -25,7 +25,9 @@ for(int i=0; i<s.length(); i++){
     }
  }
 }
+if(stack.top == -1)
 return true;
+return false;
 }
 
 public static char getMatchingParanthesis(char ch){
