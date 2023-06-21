@@ -2,7 +2,7 @@ package com.java.learn.ds.stack.examples;
 
 public class Infix_Postfix{
 public static void main(String... cse){
-String infixForm1 = "A + B * C";
+String infixForm1 = "A + B * C - D * E";
 String infixForm2 = "A * B + C";
 String convertedString1 = infixToPostfix(infixForm1);
 String convertedString2 = infixToPostfix(infixForm2);
@@ -51,12 +51,12 @@ return false;
 
 public static boolean are_Higher_Operators_On_Stack(String topEle, String op){
  if(op.equals("+")){
-	if(topEle.equals("*") || topEle.equals("/"))
+	if(topEle.equals("*") || topEle.equals("/") || topEle.equals("-"))
 		return true;	
 	return false;
  }
  else if(op.equals("-")){
-	if(topEle.equals("*") || topEle.equals("/"))
+	if(topEle.equals("*") || topEle.equals("/") || topEle.equals("+"))
 		return true;	
 	return false;
  }
