@@ -7,14 +7,18 @@ char[] arr = new char[size];
 int top = -1;
 
 public void push(char ch){
- if(isOverFlow())
+ if(isOverFlow()){
+	System.out.println("Stack OverFlow");
 	return;
+ }
  arr[++top] = ch;
 }
 
 public char pop(){
- if(isUnderFlow())
+ if(isUnderFlow()){
+	System.out.println("Stack UnderFlow!");
 	return ' ';
+ }
  char ch = arr[top--];
  return ch;
 }
