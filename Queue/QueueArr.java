@@ -25,6 +25,11 @@ public int dequeue(){
 	System.out.println("Queue is empty");
  	return -1;
  }
+ else if(front == rear){
+	int ele = arr[front];
+	front = rear = -1;
+	return ele;
+ }
  else{
 	int ele = arr[front++];
 	return ele;
@@ -73,7 +78,30 @@ public static void main(String... prog){
  queue.enqueue(3);
  queue.enqueue(4);
  queue.enqueue(5);
+ queue.enqueue(6);
+ queue.enqueue(7);
+ queue.enqueue(8);
+ System.out.println("Front of Queue : "+queue.front()+"\nRear of Queue : "+queue.rear());
  queue.print();
+
+ queue.dequeue();
+ queue.dequeue();
+ queue.dequeue();
+ queue.dequeue();
+ queue.dequeue();
+ queue.dequeue();
+ queue.dequeue();
+ queue.dequeue();
+ System.out.println("Front of Queue : "+queue.front()+"\nRear of Queue : "+queue.rear());
+ queue.print();
+
+ queue.enqueue(1);
+ queue.enqueue(2);
+ queue.enqueue(3);
+ queue.enqueue(4);
+ queue.enqueue(5);
+ queue.print();
+ System.out.println("Front of Queue : "+queue.front()+"\nRear of Queue : "+queue.rear());
 }
 
 }
