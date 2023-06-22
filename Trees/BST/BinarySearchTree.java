@@ -6,18 +6,18 @@ public Node rootPtr = null;
 
 public void insert(int data){
  Node newNode = new Node(data);
- insertNode(rootPtr, newNode);
+ rootPtr = insertNode(rootPtr, newNode);
 }
 
-public void insertNode(Node root, Node newNode){
+public Node insertNode(Node root, Node newNode){
  if(root == null){
 	root = newNode;
-	return;
  }
  else if(root.data >= newNode.data)
-	insertNode(root.left, newNode);
+	root.left = insertNode(root.left, newNode);
  else
-	insertNode(root.right, newNode);
+	root.right = insertNode(root.right, newNode);
+ return root;
 } 
 
 //public int delete(){}
@@ -40,5 +40,19 @@ public void print(){
 } 
 */
 
+public boolean search(int data){
+return searchTree(rootPtr, data);
+}
+
+public boolean searchTree(Node root, int data){
+ if(root == null)
+	return false;
+ else if(root.data == data)
+	return true;
+ else if(root.data > data)
+	return searchTree(root.left, data);
+ else
+	return searchTree(root.right, data);
+}
 
 }
