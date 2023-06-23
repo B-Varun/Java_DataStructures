@@ -10,6 +10,8 @@ for(int i=0; i<array.length; i++)
 
 System.out.println("Depth of the node 260 is : "+BST.depth(bst.rootPtr, 260));
 
+System.out.println("Height of the tree is : "+BST.height(bst.rootPtr));
+
 }
 
 }

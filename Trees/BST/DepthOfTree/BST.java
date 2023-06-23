@@ -38,4 +38,15 @@ public static int depth(Node root, int n){
 	return 1+depth(root.right, n);
 }
 
+public static int height(Node root){
+ if(root == null)
+	return -1;
+ else 
+	return 1 + max(height(root.left), height(root.right));
+}
+
+public static int max(int a, int b){
+ return (a>b) ? a : b;
+}
+
 }
