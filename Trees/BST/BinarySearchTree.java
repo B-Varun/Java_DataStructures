@@ -55,4 +55,23 @@ public boolean searchTree(Node root, int data){
 	return searchTree(root.right, data);
 }
 
+public int findMin(){
+ if(rootPtr == null)
+	return -1;
+ Node temp = rootPtr;
+ while(temp.left != null)
+	temp = temp.left;
+ return temp.data;
+}
+
+public int findMax(){
+ if(rootPtr == null)
+	return -1;
+ Node temp = rootPtr;
+ while(temp.right != null)
+	temp = temp.right;
+ return temp.data;
+}
+
+
 }
