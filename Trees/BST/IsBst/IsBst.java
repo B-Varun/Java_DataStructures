@@ -7,7 +7,7 @@ public class IsBst{
 
 public static void main(String... tre){
  BST bst = new BST();
- int[] arr = new int[]{2, 1, 3};
+ int[] arr = new int[]{1, 2, 3};
 
  for(int i=0; i<arr.length; i++)
     bst.rootPtr = bst.insert(bst.rootPtr, new Node(arr[i]));
@@ -20,6 +20,9 @@ public static void main(String... tre){
 
  System.out.println("\n\nPostorder of the BST is :");
  postOrder(bst.rootPtr);
+
+ System.out.println("\n\nIs the above tree a BST : "+isBST(bst.rootPtr));
+ 
 }
 
 public static void inOrder(Node root){
@@ -53,7 +56,20 @@ public static void postOrder(Node root){
 }
 
 public static boolean isBST(Node root){
- return false;
+ if((root == null) || (root.left == null && root.right == null))
+	return true;
+ else if(root.left == null && root.right != null){
+	if(root.data < root.right.data)
+		return isBST(root.right);
+ }
+ else if(root.left != null && root.right == null){
+	if(root.data >= root.left.data)
+		return isBST(root.left);
+ }
+ else if((root.data >= root.left.data) && (root.data < root.right.data))
+	return isBST(root.left) && isBST(root.right);
+ 
+ return false; 
 }
 
 }
