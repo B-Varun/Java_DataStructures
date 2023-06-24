@@ -58,6 +58,16 @@ public static void postOrder(Node root){
 public static boolean isBST(Node root){
  if((root == null) || (root.left == null && root.right == null))
 	return true;
+
+ else if(root.left == null && root.data < root.right.data)
+		return isBST(root.right);
+ else if(root.right == null && root.data >= root.left.data)
+		return isBST(root.left);
+ else if((root.data >= root.left.data) && (root.data < root.right.data))
+	return isBST(root.left) && isBST(root.right);
+ return false; 
+
+/*
  else if(root.left == null && root.right != null){
 	if(root.data < root.right.data)
 		return isBST(root.right);
@@ -68,8 +78,7 @@ public static boolean isBST(Node root){
  }
  else if((root.data >= root.left.data) && (root.data < root.right.data))
 	return isBST(root.left) && isBST(root.right);
- 
- return false; 
+*/ 
 }
 
 }
