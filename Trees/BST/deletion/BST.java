@@ -1,4 +1,4 @@
-package com.java.learn.ds.tree.bst;
+package com.java.learn.ds.tree.bst.deletion;
 
 import com.java.learn.ds.node.Node;
 
@@ -23,19 +23,29 @@ public Node delete(Node root, int data){
 	root.left = delete(root.left, data);
  else if(root.data < data)
 	root.right = delete(root.right, data);
- else{ 	// root.data == data
+ else{			//root.data == data
 	if(root.left == null)
 		return root.right;
 	else if(root.right == null)
 		return root.left;
-	else
-	return null; // return inOrderPredecessor or InorderSucessor();
+	else{
+		inOrderSuccessor(root.right, root);
+	}
  }
-return root;
+ return root;
+}
+
+public Node inOrderSuccessor(Node root, Node val){
+ if(root.left == null){
+	val.data = root.data;
+	return null;
+ }
+ else
+	root.left = inOrderSuccessor(root.left, val);
+ return root;
 }
 
 public boolean isEmpty(){
  return (rootPtr == null) ? true : false;
 }
-
 }
