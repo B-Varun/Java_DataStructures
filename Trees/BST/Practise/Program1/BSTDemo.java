@@ -1,3 +1,7 @@
+/**
+Deletion with inorder successor fails in this program
+*/
+
 package com.java.practise.ds.tree.bst.demo;
 
 import com.java.practise.ds.tree.bst.BST;
@@ -46,6 +50,11 @@ System.out.println("Is the tree a BST : "+isBST(bst.rootPtr));
 
 System.out.println("Is the tree a BST using other method : "+isBinaryST(bst.rootPtr));
 
+ levelOrder(bst.rootPtr);
+ bst.rootPtr = bst.delete(bst.rootPtr, 99);
+ levelOrder(bst.rootPtr);
+ bst.rootPtr = bst.delete(bst.rootPtr, 10);
+ levelOrder(bst.rootPtr);
 }
 
 public static int height(Node root){
