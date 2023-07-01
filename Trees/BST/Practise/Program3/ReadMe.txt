@@ -1,0 +1,1 @@
+This sample Program is a Linked List implementation of Queue.
