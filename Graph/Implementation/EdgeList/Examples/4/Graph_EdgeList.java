@@ -28,7 +28,22 @@ System.out.println("Does edge exists between 'B' and 'E' : "+graph.doesEdgeExist
 System.out.println("Inserted edge between 'B' and 'E' : "+graph.insertEdge("b", "e"));
 System.out.println("Does edge exists between 'B' and 'E' : "+graph.doesEdgeExist("b", "e"));
 
+System.out.println("\n\n\nDeleting edges in Graph\n\n");
 
+System.out.println("Does edge exists between 'A' and 'B' : "+graph.doesEdgeExist("a","b"));
+System.out.println("Deleted edge between 'A' and 'B' : "+graph.deleteEdge("a","b"));
+System.out.println("Does edge exists between 'A' and 'B' : "+graph.doesEdgeExist("a","b"));
 
+System.out.println("Does edge exists between 'A' and 'C' : "+graph.doesEdgeExist("a", "c"));
+System.out.println("Deleted edge between 'A' and 'C' : "+graph.deleteEdge("a","c"));
+System.out.println("Does edge exists between 'A' and 'C' : "+graph.doesEdgeExist("a", "c"));
+
+System.out.println("Does edge exists between 'A' and 'E' : "+graph.doesEdgeExist("a", "e"));
+System.out.println("Deleted edge between 'A' and 'E' : "+graph.deleteEdge("a","e"));
+System.out.println("Does edge exists between 'A' and 'E' : "+graph.doesEdgeExist("a", "e"));
+
+System.out.println("Does edge exists between 'C' and 'D' : "+graph.doesEdgeExist("c", "d"));
+System.out.println("Deleted edge between 'C' and 'D' : "+graph.deleteEdge("c","d"));
+System.out.println("Does edge exists between 'C' and 'D' : "+graph.doesEdgeExist("c", "d"));
 }
 }
