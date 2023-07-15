@@ -17,18 +17,20 @@ public void enqueue(Node node){
    front = rear = 0;
    arr[rear] = node;
   }
+else
  arr[++rear] = node; 
 }
 
 public Node dequeue(){
  if(isEmpty())
     return null;
- else if(front == rear){
+ if(front == rear){
     Node temp = arr[front];
     front = rear = -1;
     return temp;
   }
- return arr[front++];
+ Node node = arr[front++];
+ return node;
 }
 
 public boolean isFull(){

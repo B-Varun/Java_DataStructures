@@ -2,10 +2,10 @@ package com.java.practise.node;
 
 public class Node{
 public int data;
-public Node next, prev;
+public Node left, right;
 
 public Node(int d){
  data = d;
- next = prev = null;
+ left = right = null;
 }
 }
